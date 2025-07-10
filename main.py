@@ -21,5 +21,5 @@ def main():
     df.to_csv("results.csv", index=False)
     print(" Done! Results saved to results.csv")
 
-# 👇 Just this line replaces _name_ block
+# Just this line replaces _name_ block
 main()

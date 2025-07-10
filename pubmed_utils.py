@@ -25,9 +25,14 @@ def fetch_paper_details(pmid: str) -> str:
     return response.text
 
 def is_non_academic(text: str) -> bool:
-    academic_keywords = ['university', 'institute', 'college', 'school', 'hospital', 'centre', 'center', 'clinic', 'academy', 'research']
+    academic_keywords = [
+        'university', 'institute', 'college', 'school', 'hospital',
+        'centre', 'center', 'clinic', 'academy', 'research', 'irccs', 'department'
+    ]
     text_lower = text.lower()
     return not any(word in text_lower for word in academic_keywords)
+
+
 
 def parse_paper_xml(xml_data: str) -> Dict:
     import xml.etree.ElementTree as ET
